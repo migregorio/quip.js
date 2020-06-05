@@ -511,6 +511,19 @@
                     }
                   });
                 };
+                  
+                Threads.prototype.editLinkShareSettings = function (params, done) {
+                  return this.requestAPI({
+                    params: params,
+                    done: done,
+                    requiredParams: ['thread_id'],
+                    apiInfos: {
+                      version: 1,
+                      method: 'POST',
+                      path: 'threads/edit-share-link-settings'
+                    }
+                  });
+                }
         
                 Threads.prototype.addThreadMembers = function(params, done) {
                   if (params['member_ids']) {
